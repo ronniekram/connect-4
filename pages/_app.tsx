@@ -10,29 +10,29 @@ import GlobalStyles from "../styles/global-styles";
  * https://github.com/ben-rogerson/twin.examples/blob/master/next-emotion-typescript/pages/_app.tsx
  */
 function MyApp({ Component, pageProps }: AppProps) {
-  /** Prevents hydration error introduced by React 18. */
-  const [showChild, setShowChild] = useState<boolean>(false);
+	/** Prevents hydration error introduced by React 18. */
+	const [showChild, setShowChild] = useState<boolean>(false);
 
-  useEffect(() => {
-    setShowChild(true);
-  }, []);
+	useEffect(() => {
+		setShowChild(true);
+	}, []);
 
-  if (!showChild) {
-    return null;
-  }
+	if (!showChild) {
+		return null;
+	}
 
-  if (typeof window === `undefined`) {
-    return <></>;
-  }
+	if (typeof window === `undefined`) {
+		return <></>;
+	}
 
-  return (
-    <div tw="antialiased">
-      <CacheProvider value={cache}>
-        <GlobalStyles />
-        <Component {...pageProps} />
-      </CacheProvider>
-    </div>
-  );
+	return (
+		<div tw="antialiased">
+			<CacheProvider value={cache}>
+				<GlobalStyles />
+				<Component {...pageProps} />
+			</CacheProvider>
+		</div>
+	);
 }
 
 export default MyApp;

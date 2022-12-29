@@ -15,8 +15,8 @@
 		"jsx": "preserve",
 		"jsxImportSource": "@emotion/react",
 		"paths": {
-      "react": [ "./node_modules/@types/react" ]
-    }
+			"react": ["./node_modules/@types/react"]
+		}
 	},
 	"include": ["**/*", "./.eslintrc.js"],
 	"exclude": ["node_modules"]

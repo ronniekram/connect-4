@@ -1065,11 +1065,6 @@ anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-app-root-path@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/app-root-path/-/app-root-path-3.1.0.tgz#5971a2fc12ba170369a7a1ef018c71e6e47c2e86"
-  integrity sha512-biN3PwB2gUtjaYy/isrU3aNWI5w+fAfvHkSvCKeQGxhmYpwKFUxudR3Yya+KqVRHBmEDYh+/lTozYCFbmzX4nA==
-
 arg@^5.0.1, arg@^5.0.2:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/arg/-/arg-5.0.2.tgz#c81433cc427c92c4dcf4865142dbca6f15acd59c"
@@ -3489,13 +3484,6 @@ spdx-license-ids@^3.0.0:
   version "3.0.12"
   resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.12.tgz#69077835abe2710b65f03969898b6637b505a779"
   integrity sha512-rr+VVSXtRhO4OHbXUiAF7xW3Bo9DuuF6C5jH+q/x15j2jniycgKbxU09Hr0WqlSLUs4i4ltHGXqTe7VHclYWyA==
-
-stailwc@^0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/stailwc/-/stailwc-0.12.0.tgz#1d8ea39924644355091345efb5adb7cc4f68c680"
-  integrity sha512-Mb4o5Ibov/uMmuWTDv9X8wMYsWPkWowVDMFsVxBcxy9mLlKaSIpXRCeU6lqjB6QoGSSKKTJIkoZHHI8XjdVeCQ==
-  dependencies:
-    app-root-path "^3.1.0"
 
 string-similarity@^4.0.3:
   version "4.0.4"
