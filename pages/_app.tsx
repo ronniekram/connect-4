@@ -2,6 +2,7 @@ import type { AppProps } from "next/app";
 import { useEffect, useState } from "react";
 import { cache } from "@emotion/css";
 import { CacheProvider } from "@emotion/react";
+import "twin.macro";
 
 import GlobalStyles from "../styles/global-styles";
 
@@ -26,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 	}
 
 	return (
-		<div tw="antialiased">
+		<div tw="antialiased font-sans w-screen min-h-screen overflow-x-hidden bg-purple-100">
 			<CacheProvider value={cache}>
 				<GlobalStyles />
 				<Component {...pageProps} />
