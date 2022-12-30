@@ -1,9 +1,9 @@
 import tw, { styled } from "twin.macro";
 
-import { ButtonPlayers } from "./svgs/players";
+import { ButtonPlayers } from "../svgs/players";
 
 //! ----------> TYPES <----------
-const colors = {
+export const colors = {
   WHITE: tw`bg-white text-black`,
   PINK: tw`bg-pink-100 text-white`,
   YELLOW: tw`bg-yellow-100 text-black`,
