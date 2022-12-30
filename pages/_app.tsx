@@ -5,6 +5,7 @@ import { CacheProvider } from "@emotion/react";
 import "twin.macro";
 
 import GlobalStyles from "../styles/global-styles";
+import "../public/fonts/space-grotesk/index.css";
 
 /**
  * Usage of Emotion CacheProvider pulled from Twin.Macro documentation and example

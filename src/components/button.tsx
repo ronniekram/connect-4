@@ -29,7 +29,7 @@ const Btn = styled.button`
 `;
 
 const Small = styled.button`
-	${tw`w-[5.375rem] h-10`};
+	${tw`h-10 px-5`};
 	${tw`bg-purple-200 hover:(bg-pink-100)`};
 	${tw`text-white text-xs font-bold`};
 	${tw`rounded`};
