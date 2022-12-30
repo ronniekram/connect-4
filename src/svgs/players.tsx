@@ -24,7 +24,10 @@ export const Smile = ({ yellow }: { yellow?: boolean }) => (
 		<circle r="27" transform="matrix(-1 0 0 1 27 27)" fill="black" />
 		<circle r="27" transform="matrix(-1 0 0 1 27 32)" fill="black" />
 		<circle r="24" transform="matrix(-1 0 0 1 27 27)" fill={yellow ? `#FD6687` : `#FD6687`} />
-		<path d="M12.75 25.25C12.75 32.7058 18.7942 38.75 26.25 38.75C33.7058 38.75 39.75 32.7058 39.75 25.25H36.75C36.75 31.049 32.049 35.75 26.25 35.75C20.451 35.75 15.75 31.049 15.75 25.25H12.75Z" fill="black" />
+		<path
+			d="M12.75 25.25C12.75 32.7058 18.7942 38.75 26.25 38.75C33.7058 38.75 39.75 32.7058 39.75 25.25H36.75C36.75 31.049 32.049 35.75 26.25 35.75C20.451 35.75 15.75 31.049 15.75 25.25H12.75Z"
+			fill="black"
+		/>
 		<path d="M30 17V22.9844H33V17H30Z" fill="black" />
 		<path d="M20 17V22.9844H23V17H20Z" fill="black" />
 	</svg>
@@ -42,17 +45,36 @@ export const Frown = ({ yellow }: { yellow?: boolean }) => (
 );
 
 export const PlayerChip = () => (
-	<svg width="100%" height="100%" viewBox="0 0 70 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<svg
+		width="100%"
+		height="100%"
+		viewBox="0 0 70 75"
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+	>
 		<circle cx="35" cy="35" r="35" fill="black" />
 		<circle cx="35" cy="40" r="35" fill="black" />
 		<g filter="url(#filter0_i_5_6362)">
 			<circle cx="35" cy="35" r="32" fill="currentColor" />
 		</g>
 		<defs>
-			<filter id="filter0_i_5_6362" x="3" y="3" width="64" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<filter
+				id="filter0_i_5_6362"
+				x="3"
+				y="3"
+				width="64"
+				height="64"
+				filterUnits="userSpaceOnUse"
+				color-interpolation-filters="sRGB"
+			>
 				<feFlood flood-opacity="0" result="BackgroundImageFix" />
 				<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-				<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+				<feColorMatrix
+					in="SourceAlpha"
+					type="matrix"
+					values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+					result="hardAlpha"
+				/>
 				<feOffset dy="5" />
 				<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
 				<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0" />
