@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import tw, { styled } from "twin.macro";
 
+import useCountdown from "../utils/use-countdown";
 import useGameStore from "../utils/store";
 
 //! ----------> STYLES <----------
 const Timer = styled.div`
-	${tw`absolute bottom-0 z-10`};
+	${tw`absolute -bottom-4 z-10`};
 	${tw`flex flex-col justify-start items-center`};
 	${tw`w-[12.3125rem] h-[7.75rem]`};
 	${tw`font-bold`};
@@ -60,24 +61,26 @@ const Marker = ({ player }: { player: 1 | 2 }) => (
 );
 
 const TurnMarker = () => {
-	const { currentPlayer, timer, setTimer, setGameOver, setWinner } = useGameStore();
+	const { currentPlayer, setGameOver, setWinner, setScores } = useGameStore();
+
+	const timeLeft = useCountdown(+new Date() + 30000);
 
 	useEffect(() => {
-		const countdown = setInterval(setTimer, 1000);
-		if (timer === 0) {
-			setWinner(currentPlayer === 1 ? 2 : 1);
+		if (timeLeft <= 0) {
+			const winner = currentPlayer === 1 ? 2 : 1;
 			setGameOver(true);
-		}
-
-		return () => clearInterval(countdown);
-	}, []);
+			setWinner(winner);
+			setScores(winner);
+			return;
+		};
+	}, [timeLeft]);
 
 	return (
 		<div tw="relative">
 			<Marker player={currentPlayer} />
 			<Timer css={[currentPlayer === 1 ? tw`text-white` : tw`text-black`]}>
 				<p tw="text-xs">PLAYER {currentPlayer}'S TURN</p>
-				<p tw="text-lg">{timer}s</p>
+				<p tw="text-lg text-center">{(timeLeft / 1000).toFixed()}s</p>
 			</Timer>
 		</div>
 	);

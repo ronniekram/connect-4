@@ -19,8 +19,8 @@ type GameStore = {
   setWinner: (player: Player) => void;
   // SCORES
   scores: {
-    1: number;
-    2: number;
+    "1": number;
+    "2": number;
   };
   setScores: (player: 1 | 2) => void;
   // TURN TIMER
@@ -34,7 +34,7 @@ type GameStore = {
   resetGame: () => void;
 };
 
-const useGameStore = create<GameStore>((set) => ({
+const useGameStore = create<GameStore>((set, get) => ({
   gameNum: 1,
   setGameNum: () => set((state) => ({ gameNum: state.gameNum + 1 })),
   board: cleanBoard,
@@ -44,15 +44,23 @@ const useGameStore = create<GameStore>((set) => ({
   winner: null,
   setWinner: (player: Player) => set({ winner: player }),
   scores: {
-    1: 0,
-    2: 0,
+    "1": 0,
+    "2": 0,
   },
-  setScores: (player: 1 | 2) => set((state) => ({
-    scores: {
-      ...state.scores,
-      player: state.scores[player] + 1,
-    }
-  })),
+  setScores: (player: 1 | 2) => {
+    const scores = get().scores;
+    const scoreP1 = ({ "1": scores["1"] + 1 });
+    const scoreP2 = ({ "2": scores["2"] + 1 });
+
+    const updatedScore = player === 1 ? scoreP1 : scoreP2;
+
+    set((state) => ({
+      scores: {
+        ...state.scores,
+        ...updatedScore,
+      }
+    }));
+  },
   timer: 30,
   setTimer: () => set((state) => ({ timer: state.timer - 1 })),
   resetTimer: () => set({ timer: 30 }),

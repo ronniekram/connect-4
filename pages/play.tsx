@@ -4,13 +4,17 @@ import "twin.macro";
 
 import useGameStore from "../src/utils/store";
 
+import GameBoard from "../src/components/board";
 import ScoreCard from "../src/components/score";
+import ResultCard from "../src/components/result";
+import TurnMarker from "../src/components/turn-marker";
 import { SmallButton } from "../src/components/button";
 import Logo from "../src/svgs/logo";
 
 
 const PlayPage: NextPage = () => {
-  const { resetGame } = useGameStore();
+  const { resetGame, gameOver, scores } = useGameStore();
+  console.log(scores);
   return (
     <>
       <Head>
@@ -29,9 +33,17 @@ const PlayPage: NextPage = () => {
         </div>
 
         {/* MOBILE & TABLET SCORES */}
-        <div tw="w-full max-w-[39.5rem] flex items-center justify-between px-2 md:(px-0)">
+        <div tw="w-full max-w-[39.5rem] flex items-center justify-between px-2 mb-14 md:(px-0)">
           <ScoreCard player={1} />
           <ScoreCard player={2} />
+        </div>
+
+        {/* GAME BOARD */}
+        <GameBoard />
+
+        {/* MARKER/RESULT */}
+        <div tw="-mt-10">
+          {gameOver ? <ResultCard /> : <TurnMarker />}
         </div>
       </div>
     </>
