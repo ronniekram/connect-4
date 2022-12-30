@@ -1,5 +1,9 @@
+import { useRouter } from "next/router";
 import tw, { styled } from "twin.macro";
+
+import { useWindowSize } from "../utils/use-window-size";
 import Button, { CheckButton, colors as buttonColors } from "./button";
+import Logo from "../svgs/logo";
 
 //! ----------> TYPES <----------
 const colors = {
@@ -103,5 +107,35 @@ export const PauseDialog = ({ buttons }: PauseProps) => {
 				))}
 			</div>
 		</Dialog>
+	);
+};
+
+export const MainMenu = () => {
+	const router = useRouter();
+
+	const { width } = useWindowSize();
+
+	return width < 500 ? (
+		<div tw="flex flex-col space-y-20 items-center w-screen px-5">
+			<div tw="w-16 h-16">
+				<Logo />
+			</div>
+			<div tw="w-full flex flex-col space-y-5 text-black">
+				<Button label="PLAY VS PLAYER" onClick={() => router.push(`/play`)} color="YELLOW" hasIcon />
+				<Button label="RULES" onClick={() => console.log(`Open dem rules up tho.`)} color="WHITE" />
+			</div>
+		</div>
+	) : (
+		<Wrapper css={[colors.PURPLE]}>
+			<div tw="flex flex-col space-y-20 items-center">
+				<div tw="w-16 h-16">
+					<Logo />
+				</div>
+				<div tw="w-full flex flex-col space-y-5 text-black">
+					<Button label="PLAY VS PLAYER" onClick={() => router.push(`/play`)} color="YELLOW" hasIcon />
+					<Button label="RULES" onClick={() => console.log(`Open dem rules up tho.`)} color="WHITE" />
+				</div>
+			</div>
+		</Wrapper>
 	);
 };
