@@ -3,10 +3,10 @@ import create from "zustand";
 const cleanBoard = [new Array(7).fill(null), new Array(7).fill(null), new Array(7).fill(null), new Array(7).fill(null), new Array(7).fill(null), new Array(7).fill(null)];
 
 export type Player = null | 1 | 2;
-export type Board = Player[][];
+export type Board = (Player[])[];
 
 type GameStore = {
-  // NUM GAMES PLAYED - use to track which player should go first
+  // NUM GAMES PLAYED - used to track which player should go first
   gameNum: number;
   setGameNum: () => void;
   // BOARD
