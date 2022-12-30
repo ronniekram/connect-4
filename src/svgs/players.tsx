@@ -40,3 +40,24 @@ export const Frown = ({ yellow }: { yellow?: boolean }) => (
 		<path d="M39 24V27H15V24H39Z" fill="black" />
 	</svg>
 );
+
+export const PlayerChip = () => (
+	<svg width="100%" height="100%" viewBox="0 0 70 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<circle cx="35" cy="35" r="35" fill="black" />
+		<circle cx="35" cy="40" r="35" fill="black" />
+		<g filter="url(#filter0_i_5_6362)">
+			<circle cx="35" cy="35" r="32" fill="currentColor" />
+		</g>
+		<defs>
+			<filter id="filter0_i_5_6362" x="3" y="3" width="64" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+				<feFlood flood-opacity="0" result="BackgroundImageFix" />
+				<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+				<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+				<feOffset dy="5" />
+				<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+				<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0" />
+				<feBlend mode="normal" in2="shape" result="effect1_innerShadow_5_6362" />
+			</filter>
+		</defs>
+	</svg>
+);
