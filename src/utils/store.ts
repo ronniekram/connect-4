@@ -23,10 +23,6 @@ type GameStore = {
     "2": number;
   };
   setScores: (player: 1 | 2) => void;
-  // TURN TIMER
-  timer: number;
-  setTimer: () => void;
-  resetTimer: () => void;
   // GAME OVER
   gameOver: boolean;
   setGameOver: (arg: boolean) => void;
@@ -61,9 +57,6 @@ const useGameStore = create<GameStore>((set, get) => ({
       }
     }));
   },
-  timer: 30,
-  setTimer: () => set((state) => ({ timer: state.timer - 1 })),
-  resetTimer: () => set({ timer: 30 }),
   gameOver: false,
   setGameOver: (arg: boolean) => set({ gameOver: arg }),
   resetGame: () => set((state) => ({

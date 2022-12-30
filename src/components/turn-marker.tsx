@@ -6,7 +6,7 @@ import useGameStore from "../utils/store";
 
 //! ----------> STYLES <----------
 const Timer = styled.div`
-	${tw`absolute -bottom-4 z-10`};
+	${tw`absolute -bottom-4 z-20`};
 	${tw`flex flex-col justify-start items-center`};
 	${tw`w-[12.3125rem] h-[7.75rem]`};
 	${tw`font-bold`};
@@ -26,7 +26,7 @@ const Marker = ({ player }: { player: 1 | 2 }) => (
 				fillRule="evenodd"
 				clipRule="evenodd"
 				d="M3 55.2795C3 47.2326 7.82258 39.9694 15.2389 36.8468L90.2793 5.25082C95.2186 3.17114 100.786 3.16075 105.733 5.22198L181.692 36.8718C189.145 39.9772 194 47.2593 194 55.3333V132C194 143.046 185.046 152 174 152H23C11.9543 152 3 143.046 3 132V55.2795Z"
-				fill={player === 2 ? `#FD6687` : `#FD6687`}
+				fill={player === 2 ? `#FFCE67` : `#FD6687`}
 			/>
 			<path
 				d="M14.6568 35.4643C6.68427 38.8212 1.5 46.6291 1.5 55.2795V132C1.5 143.874 11.1259 153.5 23 153.5H174C185.874 153.5 195.5 143.874 195.5 132V55.3333C195.5 46.6538 190.281 38.8255 182.269 35.4872L106.31 3.83737C100.992 1.62154 95.0069 1.63271 89.6972 3.86836L14.6568 35.4643Z"
@@ -61,7 +61,7 @@ const Marker = ({ player }: { player: 1 | 2 }) => (
 );
 
 const TurnMarker = () => {
-	const { currentPlayer, setGameOver, setWinner, setScores } = useGameStore();
+	const { currentPlayer, setGameOver, setWinner, setScores, setGameNum } = useGameStore();
 
 	const timeLeft = useCountdown(+new Date() + 30000);
 
@@ -69,6 +69,7 @@ const TurnMarker = () => {
 		if (timeLeft <= 0) {
 			const winner = currentPlayer === 1 ? 2 : 1;
 			setGameOver(true);
+			setGameNum();
 			setWinner(winner);
 			setScores(winner);
 			return;

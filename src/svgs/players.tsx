@@ -1,3 +1,5 @@
+import "twin.macro";
+
 export const ButtonPlayers = () => (
 	<svg width="82" height="46" viewBox="0 0 82 46" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<circle cx="59" cy="23" r="23" fill="black" />
@@ -55,7 +57,7 @@ export const PlayerChip = () => (
 		<circle cx="35" cy="35" r="35" fill="black" />
 		<circle cx="35" cy="40" r="35" fill="black" />
 		<g filter="url(#filter0_i_5_6362)">
-			<circle cx="35" cy="35" r="32" fill="currentColor" />
+			<circle cx="35" cy="35" r="32" tw="fill-current" />
 		</g>
 		<defs>
 			<filter
