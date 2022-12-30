@@ -1,12 +1,7 @@
 import tw, { styled } from "twin.macro";
 
+import useGameStore from "../utils/store";
 import { SmallButton } from "./button";
-
-//! ----------> TYPES <----------
-type Props = {
-	winner: 1 | 2;
-	action: () => void;
-};
 
 //! ----------> STYLES <----------
 const Wrapper = styled.div`
@@ -17,12 +12,14 @@ const Wrapper = styled.div`
 `;
 
 //! ----------> COMPONENTS <----------
-const ResultCard = ({ winner, action }: Props) => {
+const ResultCard = () => {
+	const { resetGame, winner } = useGameStore();
+
 	return (
 		<Wrapper>
-			<p tw="text-xs">PLAYER {winner}</p>
-			<p tw="text-lg">WINS</p>
-			<SmallButton label="PLAY AGAIN" onClick={action} />
+			<p tw="text-xs">{winner ? `PLAYER ${winner}` : `NO WINNER`}</p>
+			<p tw="text-lg">{winner ? `WINS` : `DRAW`}</p>
+			<SmallButton label="PLAY AGAIN" onClick={resetGame} />
 		</Wrapper>
 	);
 };

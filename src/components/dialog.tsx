@@ -84,6 +84,7 @@ export const RulesDialog = ({ close }: { close: () => void }) => {
 						<li>Player Red always goes first in the first game.</li>
 						<li>Players must alternate turns.</li>
 						<li>Only one disc can be dropped each turn.</li>
+						<li>If your timer runs out before you make a move, you lose the game.</li>
 						<li>The game ends when there is a 4-in-a-row or a stalemate.</li>
 						<li>The starting player of the previous game goes second in the next game.</li>
 					</OL>

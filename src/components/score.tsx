@@ -1,12 +1,11 @@
 import tw, { styled } from "twin.macro";
 
+import useGameStore from "../utils/store";
 import { Smile, Frown } from "../svgs/players";
 
 //! ----------> TYPES <----------
 type Props = {
 	player: 1 | 2;
-	score: number;
-	frown?: boolean;
 };
 
 //! ----------> STYLES <----------
@@ -21,15 +20,19 @@ const Wrapper = styled.div`
 `;
 
 //! ----------> COMPONENTS <----------
-const ScoreCard = ({ player, score, frown }: Props) => {
+const ScoreCard = ({ player }: Props) => {
+	const { scores, gameOver, winner } = useGameStore();
+
+	const frownConditions = gameOver && winner && winner !== player;
+
 	return (
 		<Wrapper css={[player === 2 && tw`flex-row-reverse`]}>
 			<div css={[player === 1 ? tw`-ml-6 xl:(ml-0)` : tw`-mr-6 xl:(mr-0)`]} tw="xl:(-mt-6)">
-				{frown ? <Frown yellow={player === 2} /> : <Smile yellow={player === 2} />}
+				{frownConditions ? <Frown yellow={player === 2} /> : <Smile yellow={player === 2} />}
 			</div>
 			<div tw="md:(flex items-center space-x-5)">
 				<p tw="text-xs md:(text-sm)">PLAYER {player}</p>
-				<p tw="text-[32px] md:(text-lg)">{score}</p>
+				<p tw="text-[32px] md:(text-lg)">{scores[player]}</p>
 			</div>
 		</Wrapper>
 	);

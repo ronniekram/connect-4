@@ -1,10 +1,7 @@
+import { useEffect } from "react";
 import tw, { styled } from "twin.macro";
 
-//! ----------> TYPES <----------
-type Props = {
-	player: 1 | 2;
-	timeRemaining: number;
-};
+import useGameStore from "../utils/store";
 
 //! ----------> STYLES <----------
 const Timer = styled.div`
@@ -62,14 +59,28 @@ const Marker = ({ player }: { player: 1 | 2 }) => (
 	</svg>
 );
 
-const TurnMarker = ({ player, timeRemaining }: Props) => (
-	<div tw="relative">
-		<Marker player={player} />
-		<Timer css={[player === 1 ? tw`text-white` : tw`text-black`]}>
-			<p tw="text-xs">PLAYER {player}'S TURN</p>
-			<p tw="text-lg">{timeRemaining}s</p>
-		</Timer>
-	</div>
-);
+const TurnMarker = () => {
+	const { currentPlayer, timer, setTimer, setGameOver, setWinner } = useGameStore();
+
+	useEffect(() => {
+		const countdown = setInterval(setTimer, 1000);
+		if (timer === 0) {
+			setWinner(currentPlayer === 1 ? 2 : 1);
+			setGameOver(true);
+		}
+
+		return () => clearInterval(countdown);
+	}, []);
+
+	return (
+		<div tw="relative">
+			<Marker player={currentPlayer} />
+			<Timer css={[currentPlayer === 1 ? tw`text-white` : tw`text-black`]}>
+				<p tw="text-xs">PLAYER {currentPlayer}'S TURN</p>
+				<p tw="text-lg">{timer}s</p>
+			</Timer>
+		</div>
+	);
+};
 
 export default TurnMarker;
