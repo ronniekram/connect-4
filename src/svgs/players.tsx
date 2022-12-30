@@ -18,3 +18,25 @@ export const ButtonPlayers = () => (
 		<path d="M34.7083 14.6666V19.6536H31.7083V14.6666H34.7083Z" fill="currentColor" />
 	</svg>
 );
+
+export const Smile = ({ yellow }: { yellow?: boolean }) => (
+	<svg width="54" height="59" viewBox="0 0 54 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<circle r="27" transform="matrix(-1 0 0 1 27 27)" fill="black" />
+		<circle r="27" transform="matrix(-1 0 0 1 27 32)" fill="black" />
+		<circle r="24" transform="matrix(-1 0 0 1 27 27)" fill={yellow ? `#FD6687` : `#FD6687`} />
+		<path d="M12.75 25.25C12.75 32.7058 18.7942 38.75 26.25 38.75C33.7058 38.75 39.75 32.7058 39.75 25.25H36.75C36.75 31.049 32.049 35.75 26.25 35.75C20.451 35.75 15.75 31.049 15.75 25.25H12.75Z" fill="black" />
+		<path d="M30 17V22.9844H33V17H30Z" fill="black" />
+		<path d="M20 17V22.9844H23V17H20Z" fill="black" />
+	</svg>
+);
+
+export const Frown = ({ yellow }: { yellow?: boolean }) => (
+	<svg width="54" height="59" viewBox="0 0 54 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<circle r="27" transform="matrix(-1 0 0 1 27 27)" fill="black" />
+		<circle r="27" transform="matrix(-1 0 0 1 27 32)" fill="black" />
+		<circle r="24" transform="matrix(-1 0 0 1 27 27)" fill={yellow ? `#FD6687` : `#FD6687`} />
+		<path d="M35.5 17V20H29.5V17H35.5Z" fill="black" />
+		<path d="M24.5 17V20H18.5V17H24.5Z" fill="black" />
+		<path d="M39 24V27H15V24H39Z" fill="black" />
+	</svg>
+);

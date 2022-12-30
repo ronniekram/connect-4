@@ -27,9 +27,9 @@ type PauseProps = {
 const Wrapper = styled.dialog`
   ${tw`w-full md:(w-[30rem]) min-h-[27.1875rem]`};
   ${tw`flex flex-col justify-center`};
-  ${tw`rounded-[40px] border-[3px] border-black`};
+  ${tw`rounded-[40px] border-3 border-black`};
   ${tw`px-5 py-8 md:(px-10 py-12)`};
-  box-shadow: 0px 10px 0px #000000;
+  ${tw`shadow-black-lg`};
 `;
 
 const OL = styled.ol`

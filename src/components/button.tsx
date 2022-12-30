@@ -22,36 +22,26 @@ type Props = BasicProps & {
 //! ----------> STYLES <----------
 const Btn = styled.button`
 	${tw`w-full h-[4.5rem]`};
-	${tw`rounded-[20px] border-[3px] border-black`};
+	${tw`rounded border-3 border-black shadow-black-lg`};
 	${tw`font-bold text-md`};
 	${tw`transition-all duration-300 ease-in-out`};
-	box-shadow: 0px 10px 0px #000000;
-
-	&:hover {
-		${tw`border-purple-200`};
-		box-shadow: 0px 10px 0px #5c2dd5;
-	}
+  ${tw`hover:(border-purple-200 shadow-purple-lg)`};
 `;
 
 const Small = styled.button`
 	${tw`w-[5.375rem] h-10`};
 	${tw`bg-purple-200 hover:(bg-pink-100)`};
 	${tw`text-white text-xs font-bold`};
-	${tw`rounded-[20px]`};
+	${tw`rounded`};
 	${tw`transition-all duration-300 ease-in-out`};
 `;
 
 const Check = styled.button`
   ${tw`w-16 h-16 rounded-full`};
   ${tw`bg-pink-100 text-white`};
-  ${tw`border-[3px] border-black`};
+  ${tw`border-3 border-black shadow-black-sm`};
   ${tw`transition-all duration-300 ease-in-out`};
-  box-shadow: 0px 5px 0px #000000;
-
-  &:hover {
-    ${tw`border-purple-200`};
-    box-shadow: 0px 5px 0px #5C2DD5;
-  }
+  ${tw`hover:(border-purple-200 shadow-purple-sm)`};
 `;
 
 const withIcon = tw`flex justify-between items-center px-5`;

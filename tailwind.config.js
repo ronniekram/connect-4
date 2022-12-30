@@ -31,6 +31,18 @@ module.exports = {
 			fontFamily: {
 				sans: [`Space Grotesk`, `Roboto`, `sans-serif`],
 			},
+			borderRadius: {
+				DEFAULT: `20px`,
+			},
+			borderWidth: {
+				3: `3px`,
+			},
+			boxShadow: {
+				"black-sm": `0px 5px 0px #000000`,
+				"black-lg": `0px 10px 0px #000000`,
+				"purple-sm": `0px 5px 0px #5C2DD5`,
+				"purple-lg": `0px 10px 0px #5C2DD5`,
+			},
 		},
 	},
 };
