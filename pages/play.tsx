@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useState, useEffect } from "react";
 import "twin.macro";
 
 import useGameStore from "../src/utils/store";
@@ -13,8 +14,11 @@ import Logo from "../src/svgs/logo";
 
 
 const PlayPage: NextPage = () => {
-  const { resetGame, gameOver, scores } = useGameStore();
-  console.log(scores);
+  const [endTime, setEndTime] = useState<number>(+new Date() + 30000);
+  const { resetGame, gameOver, currentPlayer } = useGameStore();
+
+  useEffect(() => setEndTime(+new Date() + 30000), [currentPlayer]);
+
   return (
     <>
       <Head>
@@ -43,7 +47,7 @@ const PlayPage: NextPage = () => {
 
         {/* MARKER/RESULT */}
         <div tw="-mt-10">
-          {gameOver ? <ResultCard /> : <TurnMarker />}
+          {gameOver ? <ResultCard /> : <TurnMarker endTime={endTime} />}
         </div>
       </div>
     </>

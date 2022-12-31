@@ -60,10 +60,10 @@ const Marker = ({ player }: { player: 1 | 2 }) => (
 	</svg>
 );
 
-const TurnMarker = () => {
+const TurnMarker = ({ endTime }: { endTime: number }) => {
 	const { currentPlayer, setGameOver, setWinner, setScores, setGameNum } = useGameStore();
 
-	const timeLeft = useCountdown(+new Date() + 30000);
+	const timeLeft = useCountdown(endTime);
 
 	useEffect(() => {
 		if (timeLeft <= 0) {
@@ -77,7 +77,7 @@ const TurnMarker = () => {
 	}, [timeLeft]);
 
 	return (
-		<div tw="relative">
+		<div tw="relative z-20">
 			<Marker player={currentPlayer} />
 			<Timer css={[currentPlayer === 1 ? tw`text-white` : tw`text-black`]}>
 				<p tw="text-xs">PLAYER {currentPlayer}'S TURN</p>

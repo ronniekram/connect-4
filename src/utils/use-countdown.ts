@@ -8,7 +8,7 @@ const useCountdown = (endTime: number) => {
     const counter = setInterval(() => setTimeLeft(endTime - +new Date()), 1000);
 
     return () => clearInterval(counter);
-  }, []);
+  }, [endTime]);
 
   return timeLeft;
 };
