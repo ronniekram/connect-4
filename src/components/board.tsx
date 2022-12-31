@@ -98,7 +98,12 @@ const GameBoard = () => {
 				<Black />
 			</div>
 
-			<div tw="w-full relative" ref={ref} onMouseOver={findBoardCoords}>
+			<div
+				tw="w-full relative"
+				ref={ref}
+				onMouseOver={findBoardCoords}
+				onFocus={() => console.log(`fokay.`)}
+			>
 				<White />
 				<Grid tw="z-0!">
 					{board.flat().map((space, i) => {

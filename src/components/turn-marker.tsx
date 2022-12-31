@@ -81,7 +81,7 @@ const TurnMarker = ({ endTime }: { endTime: number }) => {
 			<Marker player={currentPlayer} />
 			<Timer css={[currentPlayer === 1 ? tw`text-white` : tw`text-black`]}>
 				<p tw="text-xs">PLAYER {currentPlayer}'S TURN</p>
-				<p tw="text-lg text-center">{(timeLeft / 1000).toFixed()}s</p>
+				<p tw="text-lg text-center">{(timeLeft / 1000).toFixed(0)}s</p>
 			</Timer>
 		</div>
 	);

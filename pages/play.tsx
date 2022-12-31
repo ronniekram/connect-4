@@ -13,10 +13,10 @@ import { SmallButton } from "../src/components/button";
 import Logo from "../src/svgs/logo";
 
 const PlayPage: NextPage = () => {
-	const [endTime, setEndTime] = useState<number>(+new Date() + 30000);
+	const [endTime, setEndTime] = useState<number>(+Date.now() + 30000);
 	const { resetGame, gameOver, currentPlayer } = useGameStore();
 
-	useEffect(() => setEndTime(+new Date() + 30000), [currentPlayer]);
+	useEffect(() => setEndTime(+Date.now() + 30000), [currentPlayer]);
 
 	return (
 		<>

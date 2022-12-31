@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
 const useCountdown = (endTime: number) => {
-	const timer = endTime - +new Date();
+	const timer = endTime - +Date.now();
 	const [timeLeft, setTimeLeft] = useState<number>(timer);
 
 	useEffect(() => {
-		const counter = setInterval(() => setTimeLeft(endTime - +new Date()), 1000);
+		const counter = setInterval(() => setTimeLeft(endTime - +Date.now()), 1000);
 
 		return () => clearInterval(counter);
 	}, [endTime]);
