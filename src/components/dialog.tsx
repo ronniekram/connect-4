@@ -102,8 +102,10 @@ export const PauseDialog = ({ buttons }: PauseProps) => {
 	return (
 		<Dialog titleText="PAUSED" color="PURPLE">
 			<div tw="flex flex-col space-y-2.5">
-				{buttons.map((button) => (
-					<Button label={button.label} color={button.color} onClick={button.action} />
+				{buttons.map((button, i) => (
+					<div key={`pause-menu-${i}`}>
+						<Button label={button.label} color={button.color} onClick={button.action} />
+					</div>
 				))}
 			</div>
 		</Dialog>
@@ -121,7 +123,12 @@ export const MainMenu = () => {
 				<Logo />
 			</div>
 			<div tw="w-full flex flex-col space-y-5 text-black">
-				<Button label="PLAY VS PLAYER" onClick={() => router.push(`/play`)} color="YELLOW" hasIcon />
+				<Button
+					label="PLAY VS PLAYER"
+					onClick={() => router.push(`/play`)}
+					color="YELLOW"
+					hasIcon
+				/>
 				<Button label="RULES" onClick={() => console.log(`Open dem rules up tho.`)} color="WHITE" />
 			</div>
 		</div>
@@ -132,8 +139,17 @@ export const MainMenu = () => {
 					<Logo />
 				</div>
 				<div tw="w-full flex flex-col space-y-5 text-black">
-					<Button label="PLAY VS PLAYER" onClick={() => router.push(`/play`)} color="YELLOW" hasIcon />
-					<Button label="RULES" onClick={() => console.log(`Open dem rules up tho.`)} color="WHITE" />
+					<Button
+						label="PLAY VS PLAYER"
+						onClick={() => router.push(`/play`)}
+						color="YELLOW"
+						hasIcon
+					/>
+					<Button
+						label="RULES"
+						onClick={() => console.log(`Open dem rules up tho.`)}
+						color="WHITE"
+					/>
 				</div>
 			</div>
 		</Wrapper>

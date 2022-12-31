@@ -4,7 +4,6 @@ import "twin.macro";
 
 import { MainMenu } from "../src/components/dialog";
 
-
 const IndexPage: NextPage = () => {
 	return (
 		<>

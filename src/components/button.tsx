@@ -65,7 +65,7 @@ export const CheckButton = ({ label, onClick }: BasicProps) => {
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
 			>
-				<path d="M2 11.5819L12.264 21.846L32.11 2" stroke="currentColor" stroke-width="3" />
+				<path d="M2 11.5819L12.264 21.846L32.11 2" stroke="currentColor" strokeWidth="3" />
 			</svg>
 		</Check>
 	);

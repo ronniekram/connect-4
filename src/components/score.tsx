@@ -28,7 +28,10 @@ const ScoreCard = ({ player }: Props) => {
 			<div tw="absolute" css={[player === 1 ? tw`-left-7` : tw`-right-7`]}>
 				{frownConditions ? <Frown yellow={player === 2} /> : <Smile yellow={player === 2} />}
 			</div>
-			<div tw="md:(flex items-center justify-between w-[13.0625rem])" css={[player === 2 && tw`md:(flex-row-reverse mr-7)`, player === 1 && tw`md:(ml-7)`]}>
+			<div
+				tw="md:(flex items-center justify-between w-[13.0625rem])"
+				css={[player === 2 && tw`md:(flex-row-reverse mr-7)`, player === 1 && tw`md:(ml-7)`]}
+			>
 				<p tw="text-xs md:(text-sm)">PLAYER {player}</p>
 				<p tw="text-[32px] text-center md:(text-lg text-left)">{scores[player]}</p>
 			</div>

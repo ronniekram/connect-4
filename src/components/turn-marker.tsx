@@ -31,7 +31,7 @@ const Marker = ({ player }: { player: 1 | 2 }) => (
 			<path
 				d="M14.6568 35.4643C6.68427 38.8212 1.5 46.6291 1.5 55.2795V132C1.5 143.874 11.1259 153.5 23 153.5H174C185.874 153.5 195.5 143.874 195.5 132V55.3333C195.5 46.6538 190.281 38.8255 182.269 35.4872L106.31 3.83737C100.992 1.62154 95.0069 1.63271 89.6972 3.86836L14.6568 35.4643Z"
 				stroke="black"
-				stroke-width="3"
+				strokeWidth="3"
 			/>
 		</g>
 		<defs>
@@ -44,7 +44,7 @@ const Marker = ({ player }: { player: 1 | 2 }) => (
 				filterUnits="userSpaceOnUse"
 				colorInterpolationFilters="sRGB"
 			>
-				<feFlood flood-opacity="0" result="BackgroundImageFix" />
+				<feFlood floodOpacity="0" result="BackgroundImageFix" />
 				<feColorMatrix
 					in="SourceAlpha"
 					type="matrix"
@@ -73,7 +73,7 @@ const TurnMarker = ({ endTime }: { endTime: number }) => {
 			setWinner(winner);
 			setScores(winner);
 			return;
-		};
+		}
 	}, [timeLeft]);
 
 	return (
